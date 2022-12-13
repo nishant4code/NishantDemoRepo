@@ -1,0 +1,87 @@
+{
+	"name": "Copy_table_SQLtoSQL",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy table from SQL to SQL",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "SqlServerSink",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "DS_SQLTable_para",
+						"type": "DatasetReference",
+						"parameters": {
+							"db_Name_DS": {
+								"value": "@pipeline().parameters.dbName",
+								"type": "Expression"
+							},
+							"Table_Name_DS": {
+								"value": "@pipeline().parameters.src_tableName",
+								"type": "Expression"
+							}
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DS_SQLTable_para",
+						"type": "DatasetReference",
+						"parameters": {
+							"db_Name_DS": {
+								"value": "@pipeline().parameters.dbName",
+								"type": "Expression"
+							},
+							"Table_Name_DS": {
+								"value": "@pipeline().parameters.sink_tableName",
+								"type": "Expression"
+							}
+						}
+					}
+				]
+			}
+		],
+		"parameters": {
+			"dbName": {
+				"type": "string"
+			},
+			"src_tableName": {
+				"type": "string"
+			},
+			"sink_tableName": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2022-12-09T17:25:38Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

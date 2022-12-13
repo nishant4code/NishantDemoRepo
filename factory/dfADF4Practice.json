@@ -1,0 +1,9 @@
+{
+	"name": "dfADF4Practice",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "dcbde14e-f938-4ff9-bda4-2c7f1fc7a086",
+		"tenantId": "7cdaaa06-a24e-4193-aa2f-45ead81573ac"
+	}
+}

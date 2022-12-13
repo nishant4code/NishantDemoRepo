@@ -1,0 +1,49 @@
+{
+	"name": "PL_ExecuteActivity",
+	"properties": {
+		"description": "Pipeline invokes another pipeline to run",
+		"activities": [
+			{
+				"name": "Invoke PL_copy_blob2blob",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Copy_table_SQLtoSQL",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true,
+					"parameters": {
+						"dbName": {
+							"value": "@pipeline().parameters.dbname",
+							"type": "Expression"
+						},
+						"src_tableName": {
+							"value": "@pipeline().parameters.srctable",
+							"type": "Expression"
+						},
+						"sink_tableName": {
+							"value": "@pipeline().parameters.sinktable",
+							"type": "Expression"
+						}
+					}
+				}
+			}
+		],
+		"parameters": {
+			"dbname": {
+				"type": "string"
+			},
+			"srctable": {
+				"type": "string"
+			},
+			"sinktable": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2022-12-10T08:58:19Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

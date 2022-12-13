@@ -1,0 +1,40 @@
+{
+	"name": "ScheduledTrigger1",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "PL_Foreach",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"outputFolders": [
+						"output1",
+						"output2",
+						"output3"
+					]
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Day",
+				"interval": 1,
+				"startTime": "2022-12-09T10:53:00",
+				"endTime": "2022-12-11T16:53:00",
+				"timeZone": "India Standard Time",
+				"schedule": {
+					"minutes": [
+						47
+					],
+					"hours": [
+						20
+					]
+				}
+			}
+		}
+	}
+}

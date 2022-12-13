@@ -1,0 +1,20 @@
+{
+	"name": "DSBlobSRC",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LSAzureBlob",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "src.txt",
+				"folderPath": "input",
+				"container": "fs-demo"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

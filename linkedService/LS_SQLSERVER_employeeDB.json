@@ -1,0 +1,16 @@
+{
+	"name": "LS_SQLSERVER_employeeDB",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "integrated security=False;data source=NISHANT\\SQLEXPRESS;initial catalog=employeeDB;user id=sa",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJiODgzNzYyOS1kYTJkLTQ5ODQtOWI5Yi0zN2I0NDdhNDc4YmYiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "IR-SelfHosted",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

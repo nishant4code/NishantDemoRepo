@@ -1,0 +1,19 @@
+{
+	"name": "DS_Delete_Blob_outputfolder",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LSAzureBlob",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": "output",
+				"container": "fs-demo"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
